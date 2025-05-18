@@ -1,0 +1,201 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="1000" height="700" fill="#f8f9fa" />
+  
+  <!-- 제목 -->
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">네이버그리드(NeighborGrid) 시스템 구성도</text>
+  
+  <!-- 물리적 인프라 영역 -->
+  <rect x="50" y="80" width="900" height="280" rx="10" ry="10" fill="#e1f5fe" stroke="#0288d1" stroke-width="2" />
+  <text x="500" y="105" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#01579b">하드웨어 인프라</text>
+  
+  <!-- 모듈러 랙 -->
+  <g>
+    <rect x="100" y="130" width="200" height="200" rx="5" ry="5" fill="#bbdefb" stroke="#1976d2" stroke-width="2" />
+    <text x="200" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#01579b">모듈러 랙 시스템</text>
+    <text x="200" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">(ModularRack)</text>
+    
+    <!-- 랙에 장착된 기기들 -->
+    <rect x="120" y="190" width="160" height="30" rx="2" ry="2" fill="#90caf9" stroke="#1565c0" stroke-width="1" />
+    <rect x="120" y="230" width="160" height="20" rx="2" ry="2" fill="#90caf9" stroke="#1565c0" stroke-width="1" />
+    <rect x="120" y="260" width="70" height="15" rx="2" ry="2" fill="#90caf9" stroke="#1565c0" stroke-width="1" />
+    <rect x="200" y="260" width="80" height="15" rx="2" ry="2" fill="#90caf9" stroke="#1565c0" stroke-width="1" />
+    <rect x="120" y="285" width="160" height="25" rx="2" ry="2" fill="#90caf9" stroke="#1565c0" stroke-width="1" />
+  </g>
+  
+  <!-- 통합 전원 관리 시스템 -->
+  <g>
+    <rect x="350" y="130" width="200" height="200" rx="5" ry="5" fill="#bbdefb" stroke="#1976d2" stroke-width="2" />
+    <text x="450" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#01579b">통합 전원 관리 시스템</text>
+    <text x="450" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">(PowerBridge)</text>
+    
+    <!-- 전원 관리 아이콘 -->
+    <circle cx="400" cy="225" r="30" fill="#64b5f6" stroke="#1565c0" stroke-width="1" />
+    <path d="M395 205 L395 225 L385 225 L400 245 L415 225 L405 225 L405 205 Z" fill="#1565c0" />
+    
+    <!-- 태양광 아이콘 -->
+    <circle cx="480" cy="225" r="25" fill="#ffeb3b" stroke="#f9a825" stroke-width="1" />
+    <path d="M480 210 L480 240 M465 225 L495 225 M468 213 L492 237 M492 213 L468 237" stroke="#f9a825" stroke-width="2" />
+    
+    <!-- 배터리 백업 아이콘 -->
+    <rect x="390" y="280" width="120" height="30" rx="3" ry="3" fill="#64b5f6" stroke="#1565c0" stroke-width="1" />
+    <rect x="500" y="290" width="10" height="10" rx="1" ry="1" fill="#1565c0" />
+    <text x="450" y="300" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#01579b">배터리 백업</text>
+  </g>
+  
+  <!-- 연결 허브 -->
+  <g>
+    <rect x="600" y="130" width="200" height="200" rx="5" ry="5" fill="#bbdefb" stroke="#1976d2" stroke-width="2" />
+    <text x="700" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#01579b">연결 허브</text>
+    <text x="700" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">(ConnectModule)</text>
+    
+    <!-- 연결 아이콘 -->
+    <circle cx="700" cy="225" r="40" fill="#64b5f6" stroke="#1565c0" stroke-width="1" />
+    <circle cx="700" cy="225" r="30" fill="#1976d2" stroke="#1565c0" stroke-width="1" />
+    <circle cx="700" cy="225" r="20" fill="#0d47a1" stroke="#1565c0" stroke-width="1" />
+    
+    <!-- 네트워크 연결선 -->
+    <line x1="700" y1="185" x2="670" y2="155" stroke="#1565c0" stroke-width="1" />
+    <line x1="700" y1="185" x2="730" y2="155" stroke="#1565c0" stroke-width="1" />
+    <line x1="700" y1="265" x2="670" y2="295" stroke="#1565c0" stroke-width="1" />
+    <line x1="700" y1="265" x2="730" y2="295" stroke="#1565c0" stroke-width="1" />
+    <line x1="740" y1="225" x2="770" y2="225" stroke="#1565c0" stroke-width="1" />
+    <line x1="660" y1="225" x2="630" y2="225" stroke="#1565c0" stroke-width="1" />
+  </g>
+  
+  <!-- 시스템 연결선 (하드웨어) -->
+  <line x1="300" y1="230" x2="350" y2="230" stroke="#0288d1" stroke-width="2" stroke-dasharray="5,3" />
+  <line x1="550" y1="230" x2="600" y2="230" stroke="#0288d1" stroke-width="2" stroke-dasharray="5,3" />
+  
+  <!-- 소프트웨어 영역 -->
+  <rect x="50" y="380" width="900" height="200" rx="10" ry="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" />
+  <text x="500" y="405" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#1b5e20">소프트웨어 플랫폼</text>
+  
+  <!-- 경량 운영체제 -->
+  <g>
+    <rect x="100" y="430" width="200" height="130" rx="5" ry="5" fill="#c8e6c9" stroke="#388e3c" stroke-width="2" />
+    <text x="200" y="455" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1b5e20">경량 운영체제</text>
+    <text x="200" y="475" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">(GridOS)</text>
+    
+    <!-- OS 아이콘 -->
+    <rect x="150" y="495" width="100" height="40" rx="5" ry="5" fill="#81c784" stroke="#2e7d32" stroke-width="1" />
+    <rect x="160" y="505" width="80" height="5" fill="#2e7d32" />
+    <rect x="160" y="515" width="60" height="5" fill="#2e7d32" />
+    <rect x="160" y="525" width="40" height="5" fill="#2e7d32" />
+  </g>
+  
+  <!-- 분산 컴퓨팅 관리자 -->
+  <g>
+    <rect x="350" y="430" width="200" height="130" rx="5" ry="5" fill="#c8e6c9" stroke="#388e3c" stroke-width="2" />
+    <text x="450" y="455" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1b5e20">분산 컴퓨팅 관리자</text>
+    <text x="450" y="475" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">(GridManager)</text>
+    
+    <!-- 관리자 아이콘 -->
+    <circle cx="410" cy="515" r="15" fill="#81c784" stroke="#2e7d32" stroke-width="1" />
+    <circle cx="450" cy="515" r="15" fill="#81c784" stroke="#2e7d32" stroke-width="1" />
+    <circle cx="490" cy="515" r="15" fill="#81c784" stroke="#2e7d32" stroke-width="1" />
+    <line x1="410" y1="515" x2="450" y2="515" stroke="#2e7d32" stroke-width="1" />
+    <line x1="450" y1="515" x2="490" y2="515" stroke="#2e7d32" stroke-width="1" />
+  </g>
+  
+  <!-- 커뮤니티 앱 스토어 -->
+  <g>
+    <rect x="600" y="430" width="200" height="130" rx="5" ry="5" fill="#c8e6c9" stroke="#388e3c" stroke-width="2" />
+    <text x="700" y="455" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1b5e20">커뮤니티 앱 스토어</text>
+    <text x="700" y="475" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">(CommunityApps)</text>
+    
+    <!-- 앱 아이콘들 -->
+    <rect x="640" y="495" width="30" height="30" rx="5" ry="5" fill="#81c784" stroke="#2e7d32" stroke-width="1" />
+    <rect x="685" y="495" width="30" height="30" rx="5" ry="5" fill="#81c784" stroke="#2e7d32" stroke-width="1" />
+    <rect x="730" y="495" width="30" height="30" rx="5" ry="5" fill="#81c784" stroke="#2e7d32" stroke-width="1" />
+    <rect x="640" y="535" width="30" height="15" rx="2" ry="2" fill="#2e7d32" />
+    <rect x="685" y="535" width="30" height="15" rx="2" ry="2" fill="#2e7d32" />
+    <rect x="730" y="535" width="30" height="15" rx="2" ry="2" fill="#2e7d32" />
+  </g>
+  
+  <!-- 시스템 연결선 (소프트웨어) -->
+  <line x1="300" y1="495" x2="350" y2="495" stroke="#4caf50" stroke-width="2" stroke-dasharray="5,3" />
+  <line x1="550" y1="495" x2="600" y2="495" stroke="#4caf50" stroke-width="2" stroke-dasharray="5,3" />
+  
+  <!-- 하드웨어-소프트웨어 연결선 -->
+  <line x1="200" y1="330" x2="200" y2="430" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="5,3" />
+  <line x1="450" y1="330" x2="450" y2="430" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="5,3" />
+  <line x1="700" y1="330" x2="700" y2="430" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="5,3" />
+  
+  <!-- 활용 방안 영역 -->
+  <rect x="50" y="600" width="900" height="80" rx="10" ry="10" fill="#fff3e0" stroke="#ff9800" stroke-width="2" />
+  <text x="500" y="625" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#e65100">활용 방안</text>
+  
+  <!-- 활용 방안 아이콘들 -->
+  <g>
+    <circle cx="150" cy="655" r="15" fill="#ffe0b2" stroke="#f57c00" stroke-width="1" />
+    <text x="150" y="660" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#e65100">교육</text>
+  </g>
+  <g>
+    <circle cx="300" cy="655" r="15" fill="#ffe0b2" stroke="#f57c00" stroke-width="1" />
+    <text x="300" y="660" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#e65100">환경</text>
+  </g>
+  <g>
+    <circle cx="450" cy="655" r="15" fill="#ffe0b2" stroke="#f57c00" stroke-width="1" />
+    <text x="450" y="660" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#e65100">정보</text>
+  </g>
+  <g>
+    <circle cx="600" cy="655" r="15" fill="#ffe0b2" stroke="#f57c00" stroke-width="1" />
+    <text x="600" y="660" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#e65100">재난</text>
+  </g>
+  <g>
+    <circle cx="750" cy="655" r="15" fill="#ffe0b2" stroke="#f57c00" stroke-width="1" />
+    <text x="750" y="660" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#e65100">디지털</text>
+  </g>
+  
+  <!-- 활용 방안 연결선 -->
+  <line x1="150" y1="580" x2="150" y2="640" stroke="#ff9800" stroke-width="1" stroke-dasharray="3,2" />
+  <line x1="300" y1="580" x2="300" y2="640" stroke="#ff9800" stroke-width="1" stroke-dasharray="3,2" />
+  <line x1="450" y1="580" x2="450" y2="640" stroke="#ff9800" stroke-width="1" stroke-dasharray="3,2" />
+  <line x1="600" y1="580" x2="600" y2="640" stroke="#ff9800" stroke-width="1" stroke-dasharray="3,2" />
+  <line x1="750" y1="580" x2="750" y2="640" stroke="#ff9800" stroke-width="1" stroke-dasharray="3,2" />
+  
+  <!-- 구형 전자기기 이미지 -->
+  <g transform="translate(850, 530)">
+    <!-- 구형 PC -->
+    <rect x="0" y="10" width="30" height="25" fill="#d7ccc8" stroke="#5d4037" stroke-width="1" />
+    <rect x="5" y="15" width="20" height="15" fill="#5d4037" />
+    <rect x="10" y="35" width="10" height="15" fill="#d7ccc8" stroke="#5d4037" stroke-width="1" />
+    <!-- 구형 노트북 -->
+    <rect x="50" y="20" width="25" height="20" fill="#d7ccc8" stroke="#5d4037" stroke-width="1" />
+    <rect x="50" y="40" width="25" height="5" fill="#d7ccc8" stroke="#5d4037" stroke-width="1" />
+    <!-- 구형 태블릿/폰 -->
+    <rect x="90" y="25" width="15" height="20" rx="2" ry="2" fill="#d7ccc8" stroke="#5d4037" stroke-width="1" />
+    <rect x="93" y="30" width="9" height="12" fill="#5d4037" />
+    <circle cx="97.5" cy="45" r="1" fill="#5d4037" />
+    
+    <!-- 화살표 -->
+    <path d="M55 10 L50 0 L60 0 Z" fill="#5d4037" />
+    <line x1="55" y1="0" x2="55" y2="-35" stroke="#5d4037" stroke-width="2" />
+  </g>
+  
+  <!-- 커뮤니티 -->
+  <g transform="translate(825, 410)">
+    <circle cx="120" cy="0" r="35" fill="#e1bee7" stroke="#8e24aa" stroke-width="2" opacity="0.7" />
+    <circle cx="110" cy="-15" r="10" fill="#9c27b0" />
+    <circle cx="135" cy="-15" r="10" fill="#9c27b0" />
+    <circle cx="110" cy="15" r="10" fill="#9c27b0" />
+    <circle cx="135" cy="15" r="10" fill="#9c27b0" />
+    <text x="120" y="2" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#4a148c">커뮤니티</text>
+  </g>
+  
+  <!-- 범례 -->
+  <g transform="translate(50, 530)">
+    <rect x="0" y="0" width="15" height="15" fill="#e1f5fe" stroke="#0288d1" stroke-width="1" />
+    <text x="20" y="12" font-family="Arial, sans-serif" font-size="12" fill="#333">하드웨어 인프라</text>
+    
+    <rect x="150" y="0" width="15" height="15" fill="#e8f5e9" stroke="#4caf50" stroke-width="1" />
+    <text x="170" y="12" font-family="Arial, sans-serif" font-size="12" fill="#333">소프트웨어 플랫폼</text>
+    
+    <rect x="300" y="0" width="15" height="15" fill="#fff3e0" stroke="#ff9800" stroke-width="1" />
+    <text x="320" y="12" font-family="Arial, sans-serif" font-size="12" fill="#333">활용 방안</text>
+    
+    <rect x="420" y="0" width="15" height="15" fill="#e1bee7" stroke="#8e24aa" stroke-width="1" />
+    <text x="440" y="12" font-family="Arial, sans-serif" font-size="12" fill="#333">커뮤니티 참여</text>
+  </g>
+</svg>

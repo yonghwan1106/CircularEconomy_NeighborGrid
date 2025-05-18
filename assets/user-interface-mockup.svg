@@ -1,0 +1,206 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="1200" height="800" fill="#f8fafc" />
+  
+  <!-- 헤더 -->
+  <rect x="0" y="0" width="1200" height="80" fill="#1e40af" />
+  <text x="60" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">NeighborGrid</text>
+  <text x="60" y="55" font-family="Arial, sans-serif" font-size="12" fill="#bfdbfe">○○동 커뮤니티 컴퓨팅 네트워크</text>
+  
+  <!-- 네비게이션 -->
+  <rect x="250" y="20" width="80" height="40" fill="#3b82f6" stroke="#1e40af" stroke-width="1" />
+  <text x="290" y="43" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">대시보드</text>
+  
+  <rect x="340" y="20" width="80" height="40" fill="transparent" stroke="#60a5fa" stroke-width="1" />
+  <text x="380" y="43" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#bfdbfe">서비스</text>
+  
+  <rect x="430" y="20" width="80" height="40" fill="transparent" stroke="#60a5fa" stroke-width="1" />
+  <text x="470" y="43" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#bfdbfe">교육</text>
+  
+  <rect x="520" y="20" width="80" height="40" fill="transparent" stroke="#60a5fa" stroke-width="1" />
+  <text x="560" y="43" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#bfdbfe">설정</text>
+  
+  <!-- 사용자 정보 -->
+  <circle cx="1100" cy="40" r="20" fill="#10b981" />
+  <text x="1100" y="47" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">김</text>
+  <text x="1050" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#bfdbfe">김주민님</text>
+  
+  <!-- 메인 컨텐츠 영역 -->
+  <rect x="20" y="100" width="1160" height="680" fill="white" stroke="#e5e7eb" stroke-width="1" />
+  
+  <!-- 시스템 상태 카드들 -->
+  <rect x="40" y="120" width="280" height="150" fill="#f0f9ff" stroke="#3b82f6" stroke-width="2" rx="8" ry="8" />
+  <text x="180" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1e40af">네트워크 상태</text>
+  <circle cx="180" cy="175" r="30" fill="#22c55e" />
+  <text x="180" y="183" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">정상</text>
+  <text x="60" y="210" font-family="Arial, sans-serif" font-size="12" fill="#64748b">연결된 기기: 47대</text>
+  <text x="60" y="230" font-family="Arial, sans-serif" font-size="12" fill="#64748b">활성 노드: 3개</text>
+  <text x="60" y="250" font-family="Arial, sans-serif" font-size="12" fill="#64748b">응답 시간: 12ms</text>
+  
+  <rect x="340" y="120" width="280" height="150" fill="#f0fdf4" stroke="#22c55e" stroke-width="2" rx="8" ry="8" />
+  <text x="480" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#166534">자원 사용률</text>
+  <text x="360" y="175" font-family="Arial, sans-serif" font-size="12" fill="#64748b">CPU: 65%</text>
+  <rect x="400" y="165" width="120" height="10" fill="#e5e7eb" />
+  <rect x="400" y="165" width="78" height="10" fill="#22c55e" />
+  
+  <text x="360" y="195" font-family="Arial, sans-serif" font-size="12" fill="#64748b">메모리: 72%</text>
+  <rect x="400" y="185" width="120" height="10" fill="#e5e7eb" />
+  <rect x="400" y="185" width="86" height="10" fill="#f59e0b" />
+  
+  <text x="360" y="215" font-family="Arial, sans-serif" font-size="12" fill="#64748b">저장소: 45%</text>
+  <rect x="400" y="205" width="120" height="10" fill="#e5e7eb" />
+  <rect x="400" y="205" width="54" height="10" fill="#3b82f6" />
+  
+  <text x="360" y="235" font-family="Arial, sans-serif" font-size="12" fill="#64748b">네트워크: 28%</text>
+  <rect x="400" y="225" width="120" height="10" fill="#e5e7eb" />
+  <rect x="400" y="225" width="34" height="10" fill="#10b981" />
+  
+  <text x="360" y="255" font-family="Arial, sans-serif" font-size="12" fill="#64748b">총 처리량: 847 작업/시간</text>
+  
+  <rect x="640" y="120" width="280" height="150" fill="#fef7cd" stroke="#f59e0b" stroke-width="2" rx="8" ry="8" />
+  <text x="780" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#92400e">전력 관리</text>
+  <text x="660" y="175" font-family="Arial, sans-serif" font-size="12" fill="#64748b">총 소비전력: 420W</text>
+  <text x="660" y="195" font-family="Arial, sans-serif" font-size="12" fill="#64748b">태양광 발전: 280W</text>
+  <text x="660" y="215" font-family="Arial, sans-serif" font-size="12" fill="#64748b">배터리 용량: 85%</text>
+  <text x="660" y="235" font-family="Arial, sans-serif" font-size="12" fill="#64748b">효율성: 89%</text>
+  <circle cx="850" cy="200" r="15" fill="#22c55e" />
+  <text x="850" y="206" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">ON</text>
+  <text x="850" y="255" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#166534">친환경 모드</text>
+  
+  <rect x="940" y="120" width="240" height="150" fill="#fdf2f8" stroke="#ec4899" stroke-width="2" rx="8" ry="8" />
+  <text x="1060" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#be185d">나의 기여도</text>
+  <text x="960" y="175" font-family="Arial, sans-serif" font-size="12" fill="#64748b">기부한 기기: 2대</text>
+  <text x="960" y="195" font-family="Arial, sans-serif" font-size="12" fill="#64748b">참여 포인트: 1,250P</text>
+  <text x="960" y="215" font-family="Arial, sans-serif" font-size="12" fill="#64748b">사용 시간: 15시간</text>
+  <text x="960" y="235" font-family="Arial, sans-serif" font-size="12" fill="#64748b">랭킹: 15위/47명</text>
+  <text x="960" y="255" font-family="Arial, sans-serif" font-size="10" fill="#be185d">🏆 우수 참여자</text>
+  
+  <!-- 메인 서비스 인터페이스 -->
+  <rect x="40" y="290" width="560" height="480" fill="#ffffff" stroke="#d1d5db" stroke-width="1" />
+  <rect x="40" y="290" width="560" height="40" fill="#f3f4f6" />
+  <text x="60" y="315" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">커뮤니티 서비스</text>
+  
+  <!-- 서비스 탭들 -->
+  <rect x="60" y="340" width="100" height="30" fill="#3b82f6" />
+  <text x="110" y="358" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">학습 센터</text>
+  
+  <rect x="170" y="340" width="100" height="30" fill="#e5e7eb" />
+  <text x="220" y="358" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">환경 모니터링</text>
+  
+  <rect x="280" y="340" width="100" height="30" fill="#e5e7eb" />
+  <text x="330" y="358" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">커뮤니티 소식</text>
+  
+  <rect x="390" y="340" width="100" height="30" fill="#e5e7eb" />
+  <text x="440" y="358" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">재난 정보</text>
+  
+  <!-- 학습 센터 컨텐츠 -->
+  <text x="60" y="395" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">온라인 학습 과정</text>
+  
+  <rect x="60" y="410" width="160" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+  <text x="140" y="430" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1e40af">기초 컴퓨터</text>
+  <text x="140" y="450" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e40af">진도: 60%</text>
+  <rect x="80" y="460" width="120" height="8" fill="#e5e7eb" />
+  <rect x="80" y="460" width="72" height="8" fill="#22c55e" />
+  <text x="140" y="480" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">참여자: 12명</text>
+  
+  <rect x="240" y="410" width="160" height="80" fill="#dcfce7" stroke="#22c55e" stroke-width="1" />
+  <text x="320" y="430" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#166534">프로그래밍 기초</text>
+  <text x="320" y="450" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#166534">진도: 30%</text>
+  <rect x="260" y="460" width="120" height="8" fill="#e5e7eb" />
+  <rect x="260" y="460" width="36" height="8" fill="#f59e0b" />
+  <text x="320" y="480" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">참여자: 8명</text>
+  
+  <rect x="420" y="410" width="160" height="80" fill="#fdf2f8" stroke="#ec4899" stroke-width="1" />
+  <text x="500" y="430" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#be185d">디지털 아트</text>
+  <text x="500" y="450" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#be185d">신규 과정</text>
+  <rect x="440" y="460" width="120" height="8" fill="#e5e7eb" />
+  <rect x="440" y="460" width="12" height="8" fill="#3b82f6" />
+  <text x="500" y="480" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">참여자: 3명</text>
+  
+  <!-- 원격 데스크톱 섹션 -->
+  <text x="60" y="520" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">원격 데스크톱 접속</text>
+  
+  <rect x="60" y="535" width="520" height="200" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <rect x="70" y="545" width="500" height="30" fill="#374151" />
+  <circle cx="85" cy="560" r="5" fill="#ef4444" />
+  <circle cx="100" cy="560" r="5" fill="#f59e0b" />
+  <circle cx="115" cy="560" r="5" fill="#22c55e" />
+  <text x="290" y="565" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">가상 데스크톱 - 워크스테이션 #3</text>
+  
+  <!-- 가상 데스크톱 화면 -->
+  <rect x="80" y="585" width="480" height="30" fill="#1e40af" />
+  <text x="90" y="605" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">시작</text>
+  <rect x="480" y="590" width="70" height="20" fill="#374151" />
+  <text x="515" y="603" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="white">14:25</text>
+  
+  <rect x="90" y="625" width="100" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+  <text x="140" y="650" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e40af">📝</text>
+  <text x="140" y="665" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#1e40af">한글</text>
+  <text x="140" y="675" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#1e40af">문서 작성</text>
+  
+  <rect x="210" y="625" width="100" height="80" fill="#dcfce7" stroke="#22c55e" stroke-width="1" />
+  <text x="260" y="650" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#166534">🌐</text>
+  <text x="260" y="665" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#166534">웹 브라우저</text>
+  <text x="260" y="675" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#166534">인터넷 검색</text>
+  
+  <rect x="330" y="625" width="100" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" />
+  <text x="380" y="650" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#92400e">📊</text>
+  <text x="380" y="665" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#92400e">엑셀</text>
+  <text x="380" y="675" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#92400e">계산 작업</text>
+  
+  <rect x="450" y="625" width="100" height="80" fill="#fdf2f8" stroke="#ec4899" stroke-width="1" />
+  <text x="500" y="650" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#be185d">🎨</text>
+  <text x="500" y="665" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#be185d">그림판</text>
+  <text x="500" y="675" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#be185d">이미지 편집</text>
+  
+  <!-- 오른쪽 사이드바 -->
+  <rect x="620" y="290" width="560" height="480" fill="#ffffff" stroke="#d1d5db" stroke-width="1" />
+  <rect x="620" y="290" width="560" height="40" fill="#f3f4f6" />
+  <text x="640" y="315" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">실시간 활동</text>
+  
+  <!-- 활동 피드 -->
+  <rect x="640" y="340" width="520" height="60" fill="#f0f9ff" stroke="#bfdbfe" stroke-width="1" />
+  <circle cx="665" cy="365" r="15" fill="#3b82f6" />
+  <text x="665" y="371" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">📚</text>
+  <text x="690" y="358" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e40af">새로운 학습 과정 개설</text>
+  <text x="690" y="375" font-family="Arial, sans-serif" font-size="10" fill="#64748b">"디지털 마케팅 기초" 과정이 개설되었습니다.</text>
+  <text x="690" y="390" font-family="Arial, sans-serif" font-size="9" fill="#9ca3af">2분 전</text>
+  
+  <rect x="640" y="410" width="520" height="60" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
+  <circle cx="665" cy="435" r="15" fill="#22c55e" />
+  <text x="665" y="441" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">🌡️</text>
+  <text x="690" y="428" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#166534">환경 데이터 업데이트</text>
+  <text x="690" y="445" font-family="Arial, sans-serif" font-size="10" fill="#64748b">대기질 지수: 좋음(32) | 온도: 22°C | 습도: 65%</text>
+  <text x="690" y="460" font-family="Arial, sans-serif" font-size="9" fill="#9ca3af">5분 전</text>
+  
+  <rect x="640" y="480" width="520" height="60" fill="#fffbeb" stroke="#fed7aa" stroke-width="1" />
+  <circle cx="665" cy="505" r="15" fill="#f59e0b" />
+  <text x="665" y="511" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">👥</text>
+  <text x="690" y="498" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#92400e">새로운 참여자</text>
+  <text x="690" y="515" font-family="Arial, sans-serif" font-size="10" fill="#64748b">박○○님이 커뮤니티에 가입했습니다.</text>
+  <text x="690" y="530" font-family="Arial, sans-serif" font-size="9" fill="#9ca3af">10분 전</text>
+  
+  <!-- 시스템 성능 그래프 -->
+  <text x="640" y="575" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">시스템 성능 (최근 24시간)</text>
+  
+  <rect x="640" y="590" width="520" height="150" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+  
+  <!-- 간단한 성능 그래프 -->
+  <path d="M660 720 L680 700 L700 680 L720 690 L740 670 L760 650 L780 640 L800 630 L820 620 L840 610 L860 600 L880 590 L900 580 L920 570 L940 560 L960 550 L980 540 L1000 530 L1020 520 L1040 510 L1060 500 L1080 490 L1100 480 L1120 470" stroke="#3b82f6" stroke-width="2" fill="none" />
+  <text x="660" y="735" font-family="Arial, sans-serif" font-size="9" fill="#64748b">00:00</text>
+  <text x="780" y="735" font-family="Arial, sans-serif" font-size="9" fill="#64748b">12:00</text>
+  <text x="1100" y="735" font-family="Arial, sans-serif" font-size="9" fill="#64748b">24:00</text>
+  
+  <text x="630" y="720" font-family="Arial, sans-serif" font-size="9" fill="#64748b">0%</text>
+  <text x="630" y="650" font-family="Arial, sans-serif" font-size="9" fill="#64748b">50%</text>
+  <text x="620" y="590" font-family="Arial, sans-serif" font-size="9" fill="#64748b">100%</text>
+  
+  <text x="900" y="615" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6">CPU 사용률</text>
+  
+  <!-- 퀵 액션 버튼들 -->
+  <rect x="1000" y="750" width="80" height="30" fill="#3b82f6" stroke="#1e40af" stroke-width="1" rx="5" ry="5" />
+  <text x="1040" y="768" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">새로고침</text>
+  
+  <rect x="1090" y="750" width="80" height="30" fill="#22c55e" stroke="#16a34a" stroke-width="1" rx="5" ry="5" />
+  <text x="1130" y="768" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">도움말</text>
+</svg>
