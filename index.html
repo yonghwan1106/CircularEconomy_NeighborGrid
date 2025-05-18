@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버그리드(NeighborGrid) - 구형 전자기기 기반 커뮤니티 컴퓨팅 생태계</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'eco-green': '#2E7D32',
+                        'eco-blue': '#1565C0',
+                        'eco-light-green': '#A5D6A7',
+                        'eco-light-blue': '#90CAF9',
+                        'eco-cream': '#F9FBE7'
+                    },
+                    fontFamily: {
+                        'korean': ['Noto Sans KR', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-korean text-gray-800 bg-white overflow-x-hidden">
+    <!-- 네비게이션 바 -->
+    <nav class="fixed top-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-eco-green">
+                    <span class="text-eco-blue">Neighbor</span>Grid
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#hero" class="nav-link text-gray-700 hover:text-eco-green transition-colors">홈</a>
+                    <a href="#problem" class="nav-link text-gray-700 hover:text-eco-green transition-colors">문제 인식</a>
+                    <a href="#solution" class="nav-link text-gray-700 hover:text-eco-green transition-colors">해결책</a>
+                    <a href="#how-it-works" class="nav-link text-gray-700 hover:text-eco-green transition-colors">작동 원리</a>
+                    <a href="#use-cases" class="nav-link text-gray-700 hover:text-eco-green transition-colors">활용 방안</a>
+                    <a href="#benefits" class="nav-link text-gray-700 hover:text-eco-green transition-colors">기대 효과</a>
+                </div>
+                <!-- 모바일 메뉴 버튼 -->
+                <button id="mobile-menu-btn" class="md:hidden text-eco-green">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- 모바일 메뉴 -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#hero" class="block py-2 text-gray-700 hover:text-eco-green transition-colors">홈</a>
+                <a href="#problem" class="block py-2 text-gray-700 hover:text-eco-green transition-colors">문제 인식</a>
+                <a href="#solution" class="block py-2 text-gray-700 hover:text-eco-green transition-colors">해결책</a>
+                <a href="#how-it-works" class="block py-2 text-gray-700 hover:text-eco-green transition-colors">작동 원리</a>
+                <a href="#use-cases" class="block py-2 text-gray-700 hover:text-eco-green transition-colors">활용 방안</a>
+                <a href="#benefits" class="block py-2 text-gray-700 hover:text-eco-green transition-colors">기대 효과</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full-screen Slider Hero Section -->
+    <section id="hero" class="relative h-screen overflow-hidden">
+        <!-- 슬라이더 컨테이너 -->
+        <div class="hero-slider relative w-full h-full">
+            <!-- 슬라이드 1: 전자폐기물 문제 -->
+            <div class="hero-slide active absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('assets/hero_bg/pexels-humanistagram-19037726.jpg')">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <div class="inline-block bg-red-600 bg-opacity-80 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            전자폐기물 위기
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                            버려지는 전자기기,<br>
+                            새로운 시작이 될 수 있다면?
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 opacity-90">
+                            연간 5천만 톤의 전자폐기물, 이제 지역사회의 디지털 자원으로 변환합니다
+                        </p>
+                        <a href="#solution" class="bg-eco-green text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            해결책 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 슬라이드 2: 커뮤니티 협력 -->
+            <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('assets/hero_bg/pexels-fauxels-3183150.jpg')">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <div class="inline-block bg-blue-600 bg-opacity-80 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            커뮤니티 혁신
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                            <span class="text-eco-light-blue">Neighbor</span><span class="text-eco-light-green">Grid</span><br>
+                            함께 만드는 지속가능한 미래
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 opacity-90">
+                            주민들의 자발적 참여로 구축되는 차세대 커뮤니티 컴퓨팅 네트워크
+                        </p>
+                        <a href="#use-cases" class="bg-eco-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            활용 방안 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 슬라이드 3: 기술 혁신 -->
+            <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('assets/hero_bg/pexels-maxfrancis-2246476.jpg')">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <div class="inline-block bg-purple-600 bg-opacity-80 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            기술 혁신
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                            과거의 기술,<br>
+                            미래의 가능성
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 opacity-90">
+                            구형 기기들이 모여 만드는 강력한 분산 컴퓨팅 네트워크
+                        </p>
+                        <a href="#how-it-works" class="bg-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            작동 원리 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 슬라이드 4: 교육과 성장 -->
+            <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('assets/hero_bg/pexels-rdne-7915220.jpg')">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <div class="inline-block bg-orange-600 bg-opacity-80 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            교육과 성장
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                            디지털 격차를<br>
+                            연결의 다리로
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 opacity-90">
+                            모든 주민이 동등하게 누리는 디지털 교육과 성장의 기회
+                        </p>
+                        <a href="#use-cases" class="bg-orange-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            교육 프로그램 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 슬라이드 5: 환경 보호 -->
+            <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('assets/hero_bg/pexels-padrinan-3520694.jpg')">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <div class="inline-block bg-green-600 bg-opacity-80 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            환경 보호
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                            지구를 위한<br>
+                            순환의 선택
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 opacity-90">
+                            연간 18톤 전자폐기물 감소, 6.3톤 CO₂ 절약의 환경적 가치
+                        </p>
+                        <a href="#benefits" class="bg-green-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            환경 효과 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 슬라이드 6: 경제적 가치 -->
+            <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('assets/hero_bg/pexels-canvastudio-3194519.jpg')">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <div class="inline-block bg-yellow-600 bg-opacity-80 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            경제적 가치
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                            5.4억원 절약,<br>
+                            새로운 경제 모델
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 opacity-90">
+                            지역사회와 주민 모두에게 돌아가는 실질적인 경제적 혜택
+                        </p>
+                        <a href="#benefits" class="bg-yellow-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            경제 효과 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 슬라이드 7: 재난 대응 -->
+            <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('assets/hero_bg/pexels-ron-lach-10638067.jpg')">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <div class="inline-block bg-red-600 bg-opacity-80 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            재난 대응
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                            위기 상황에서도<br>
+                            끊이지 않는 연결
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 opacity-90">
+                            중앙 인프라 마비 시에도 작동하는 지역 기반 통신 및 정보 시스템
+                        </p>
+                        <a href="#use-cases" class="bg-red-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            재난 대응 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 슬라이드 8: 공모전 마무리 -->
+            <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('assets/hero_bg/pexels-greta-hoffman-9475411.jpg')">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <div class="inline-block bg-eco-green bg-opacity-80 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            2025 순환경제 아이디어 공모전
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                            함께 만들어갈<br>
+                            순환경제의 미래
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 opacity-90">
+                            네이버그리드로 시작하는 지속가능한 디지털 혁신
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="#solution" class="bg-eco-green text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105">
+                                자세히 보기
+                            </a>
+                            <a href="#benefits" class="border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-all">
+                                효과 체험하기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 네비게이션 도트 -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+            <button class="slider-dot active w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="0"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="1"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="2"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="3"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="4"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="5"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="6"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="7"></button>
+        </div>
+
+        <!-- 좌우 네비게이션 화살표 -->
+        <button class="slider-arrow slider-arrow-left absolute left-8 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-3 rounded-full transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+        <button class="slider-arrow slider-arrow-right absolute right-8 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-3 rounded-full transition-all">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+
+        <!-- 자동 재생 컨트롤 -->
+        <button id="slider-play-pause" class="absolute top-24 right-8 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-3 rounded-full transition-all">
+            <svg class="w-6 h-6 play-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6"></path>
+            </svg>
+            <svg class="w-6 h-6 pause-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 011.414 0l4.586 4.586a1 1 0 01.414.707V17"></path>
+            </svg>
+        </button>
+
+        <!-- 스크롤 다운 인디케이터 -->
+        <div class="absolute bottom-32 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <a href="#problem" class="block">
+                <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+                <p class="text-sm mt-2">스크롤하여 더 보기</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 문제 정의 섹션 -->
+    <section id="problem" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                    우리가 해결하고자 하는 문제
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    현재 전자폐기물과 디지털 격차라는 두 가지 심각한 문제가 동시에 발생하고 있습니다
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- 전자폐기물 문제 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-5xl mb-6 text-center">🗑️</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">전자폐기물 급증</h3>
+                    <div class="space-y-4 text-gray-600">
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 text-xl">📈</span>
+                            <div>
+                                <strong>연간 5천만 톤 이상</strong>의 전자폐기물 발생
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 text-xl">♻️</span>
+                            <div>
+                                재활용률은 <strong>20% 미만</strong>에 불과
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 text-xl">🏠</span>
+                            <div>
+                                한국 가구당 평균 <strong>5개 이상</strong>의 미사용 전자기기 방치
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 text-xl">☢️</span>
+                            <div>
+                                납, 수은, 카드뮴 등 <strong>유해물질</strong> 환경 유출 위험
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 디지털 격차 문제 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-5xl mb-6 text-center">📶</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">디지털 격차 심화</h3>
+                    <div class="space-y-4 text-gray-600">
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">💰</span>
+                            <div>
+                                경제적 여건에 따른 <strong>최신 기기 접근성</strong> 격차
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">🎓</span>
+                            <div>
+                                교육, 정보 접근, 사회 참여 기회의 <strong>불평등</strong>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">🏥</span>
+                            <div>
+                                코로나19 이후 온라인 서비스 의존도 증가로 <strong>격차 심화</strong>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">🆘</span>
+                            <div>
+                                재난 시 중앙 인프라 마비에 따른 <strong>통신 단절</strong> 위험
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 문제 요약 -->
+            <div class="mt-16 bg-gradient-to-r from-red-50 to-orange-50 p-8 rounded-2xl border-l-4 border-red-400">
+                <div class="text-center">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">
+                        🤔 핵심 질문: 왜 충분히 작동하는 기기들이 버려지는 동시에 디지털 소외가 발생할까요?
+                    </h4>
+                    <p class="text-gray-600 text-lg">
+                        네이버그리드는 이 두 문제를 하나의 솔루션으로 해결하는 혁신적 접근법입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 솔루션 섹션 -->
+    <section id="solution" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                    네이버그리드 솔루션
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    구형 전자기기를 연결하여 지역 커뮤니티를 위한 분산 컴퓨팅 네트워크로 변환
+                </p>
+            </div>
+
+            <!-- 핵심 개념 -->
+            <div class="bg-gradient-to-r from-eco-cream to-eco-light-green p-8 lg:p-12 rounded-3xl mb-16">
+                <div class="text-center">
+                    <div class="text-6xl mb-6">🔄</div>
+                    <h3 class="text-2xl lg:text-3xl font-bold text-eco-green mb-6">핵심 개념</h3>
+                    <p class="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+                        개별적으로는 제한된 성능을 가진 구형 기기들이지만, 함께 연결되면 강력한 컴퓨팅 자원을 제공할 수 있습니다. 
+                        네이버그리드는 이러한 기기들을 체계적으로 통합하여 지역사회를 위한 디지털 인프라를 구축합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 시스템 구성도 -->
+            <div class="mb-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">시스템 구성도</h3>
+                    <p class="text-gray-600">네이버그리드의 하드웨어와 소프트웨어 구성 요소</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="max-w-full overflow-x-auto">
+                        <img src="assets/neighborgrid-diagram.svg" alt="네이버그리드 시스템 구성도" 
+                             class="w-full max-w-4xl mx-auto h-auto">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 주요 특징 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-6 bg-white shadow-lg rounded-xl hover:shadow-xl transition-shadow">
+                    <div class="text-5xl mb-4">🔧</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">모듈식 설계</h4>
+                    <p class="text-gray-600">
+                        다양한 크기와 성능의 기기를 유연하게 통합할 수 있는 확장 가능한 구조
+                    </p>
+                </div>
+                <div class="text-center p-6 bg-white shadow-lg rounded-xl hover:shadow-xl transition-shadow">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">분산 네트워크</h4>
+                    <p class="text-gray-600">
+                        단일 장애점을 제거하고 지역 단위의 독립적 운영이 가능한 메시 네트워크
+                    </p>
+                </div>
+                <div class="text-center p-6 bg-white shadow-lg rounded-xl hover:shadow-xl transition-shadow">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">커뮤니티 중심</h4>
+                    <p class="text-gray-600">
+                        주민 참여와 자원 공유를 통한 지속 가능한 운영 모델
+                    </p>
+                </div>
+            </div>
+
+            <!-- 변화 과정 시각화 -->
+            <div class="bg-gray-50 p-8 lg:p-12 rounded-3xl">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-12">변화 과정</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="text-center">
+                        <div class="bg-red-100 p-8 rounded-2xl mb-4">
+                            <div class="text-5xl">📱💻🖥️</div>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Before</h4>
+                        <p class="text-gray-600">서랍 속에 방치된 구형 전자기기들</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-6xl text-eco-green">➡️</div>
+                        <p class="text-lg font-medium text-eco-green mt-4">네이버그리드 통합</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-green-100 p-8 rounded-2xl mb-4">
+                            <div class="text-5xl">🏘️💡🌐</div>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">After</h4>
+                        <p class="text-gray-600">지역사회를 위한 분산 컴퓨팅 자원</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 추가 프로토타입 갤러리 -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">프로토타입 및 구현 예시</h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- 모듈러 랙 프로토타입 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">모듈러 랙 시스템 프로토타입</h4>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="assets/modular-rack-prototype.svg" alt="모듈러 랙 시스템 프로토타입" 
+                                 class="w-full h-auto hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <p class="text-gray-600 mt-4 text-sm">
+                            다양한 크기의 전자기기를 효율적으로 수용할 수 있는 유연한 랙 시스템. 
+                            냉각, 전원 관리, 모니터링이 통합된 설계입니다.
+                        </p>
+                    </div>
+                    
+                    <!-- 커뮤니티 설치 현장 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">커뮤니티 설치 현장</h4>
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="assets/community-installation.svg" alt="커뮤니티 설치 현장" 
+                                 class="w-full h-auto hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <p class="text-gray-600 mt-4 text-sm">
+                            실제 아파트 단지 커뮤니티센터에서의 네이버그리드 설치 과정. 
+                            주민 참여와 자원봉사자들의 협력으로 구축되는 모습입니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 사용자 인터페이스 -->
+                <div class="mt-8 bg-white p-6 rounded-2xl shadow-lg">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">네이버그리드 사용자 인터페이스</h4>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="assets/user-interface-mockup.svg" alt="사용자 인터페이스 목업" 
+                             class="w-full h-auto hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <p class="text-gray-600 mt-4 text-sm">
+                        주민들이 사용하는 네이버그리드 포털의 모습. 실시간 시스템 모니터링, 
+                        원격 데스크톱 접속, 학습 센터 등 다양한 서비스를 직관적으로 이용할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 작동 방식 섹션 -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                    작동 방식
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    하드웨어와 소프트웨어가 통합된 종합 솔루션
+                </p>
+            </div>
+
+            <!-- 하드웨어 구성요소 -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-12">하드웨어 구성요소</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-5xl mb-6 text-center">🗂️</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">모듈러 랙 시스템</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 다양한 기기 크기 수용 가능한 유연한 슬롯</li>
+                            <li>• 효율적 냉각 시스템으로 안정적 운영</li>
+                            <li>• 재활용 소재 사용한 친환경 설계</li>
+                            <li>• 커뮤니티 규모에 따른 모듈식 확장</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-5xl mb-6 text-center">⚡</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">통합 전원 관리</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 지능형 전력 분배 시스템</li>
+                            <li>• 에너지 모니터링으로 효율 극대화</li>
+                            <li>• 태양광 패널 연동 가능</li>
+                            <li>• 정전 시 배터리 백업 시스템</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-5xl mb-6 text-center">🌐</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">연결 허브</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• WiFi, Bluetooth, 이더넷 지원</li>
+                            <li>• 메시 네트워크를 통한 직접 통신</li>
+                            <li>• 암호화 및 접근 제어 기능</li>
+                            <li>• 네트워크 부하 분산 관리</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 소프트웨어 구성요소 -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-12">소프트웨어 구성요소</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-5xl mb-6 text-center">💿</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">경량 운영체제 (GridOS)</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 구형 기기 최적화 리눅스 기반</li>
+                            <li>• 15년 이상 된 기기도 지원</li>
+                            <li>• 모듈식 구조로 필요한 기능만 설치</li>
+                            <li>• 원격 관리 및 자동 업데이트</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-5xl mb-6 text-center">⚙️</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">분산 컴퓨팅 관리자</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 작업 분산 알고리즘</li>
+                            <li>• 실시간 자원 모니터링</li>
+                            <li>• 우선순위 기반 스케줄링</li>
+                            <li>• 자동 장애 복구 기능</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-5xl mb-6 text-center">📱</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">커뮤니티 앱 스토어</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 지역 데이터 저장소</li>
+                            <li>• 커뮤니티 메시 네트워크</li>
+                            <li>• 환경 모니터링 시스템</li>
+                            <li>• 비상 정보 시스템</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 운영 모델 -->
+            <div class="bg-eco-cream p-8 lg:p-12 rounded-3xl">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">참여 및 운영 모델</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-bold text-eco-green mb-4">커뮤니티 참여</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start gap-3">
+                                <span class="text-eco-green">✓</span>
+                                <span>미사용 전자기기 기부를 통한 참여</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-eco-green">✓</span>
+                                <span>기기 성능에 따른 포인트 시스템 운영</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-eco-green">✓</span>
+                                <span>역할별 참여자 구분 (사용자, 관리자, 자원봉사자)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-eco-green mb-4">지속가능성</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start gap-3">
+                                <span class="text-eco-green">✓</span>
+                                <span>지자체 지원 및 기업 후원</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-eco-green">✓</span>
+                                <span>재생에너지 활용으로 전력 비용 절감</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-eco-green">✓</span>
+                                <span>오픈소스 기반 기술적 지속가능성</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 활용 방안 섹션 -->
+    <section id="use-cases" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                    활용 방안
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    네이버그리드가 지역사회에 제공할 수 있는 다양한 서비스들
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- 교육 분야 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+                    <div class="text-5xl mb-6">🎓</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">교육 분야 활용</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-600">📚</span>
+                            <span>저소득층 학생 대상 디지털 학습 센터</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-600">💻</span>
+                            <span>프로그래밍 및 디지털 콘텐츠 제작 실습</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-600">🌐</span>
+                            <span>오프라인 환경에서도 접근 가능한 학습 자료</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-600">🏆</span>
+                            <span>지역 청소년 해커톤 및 코딩 대회 지원</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 환경 모니터링 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl">
+                    <div class="text-5xl mb-6">🌍</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">환경 모니터링</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-600">🌡️</span>
+                            <span>온도, 습도, 소음 등 환경 데이터 수집</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-600">💨</span>
+                            <span>대기질 및 미세먼지 실시간 측정</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-600">📊</span>
+                            <span>장기 환경 변화 추적 및 분석</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-green-600">🚨</span>
+                            <span>오염도 임계치 초과 시 주민 알림</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 지역 정보 공유 -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl">
+                    <div class="text-5xl mb-6">🏘️</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">지역 정보 공유</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <span class="text-purple-600">📢</span>
+                            <span>지역 소식 및 행사 정보 공유</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-purple-600">🛒</span>
+                            <span>주민 간 중고 거래 플랫폼</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-purple-600">📝</span>
+                            <span>공동 문서 작업 및 협업 도구</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-purple-600">🗳️</span>
+                            <span>지역 사회 의사결정 투표 시스템</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 재난 대응 -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl">
+                    <div class="text-5xl mb-6">🆘</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">재난 대응 시스템</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-600">📡</span>
+                            <span>중앙 인프라 마비 시 대체 통신망</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-600">🗺️</span>
+                            <span>대피소, 구호물품 위치 정보 제공</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-600">🤝</span>
+                            <span>지역 내 가용 자원 관리 플랫폼</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-600">💾</span>
+                            <span>분산형 데이터베이스로 지속 운영</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 디지털 격차 해소 -->
+            <div class="mt-12 bg-gradient-to-r from-eco-cream to-eco-light-green p-8 lg:p-12 rounded-3xl">
+                <div class="text-center">
+                    <div class="text-6xl mb-6">🤝</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">디지털 격차 해소 플랫폼</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">💻</div>
+                            <h4 class="font-bold text-gray-800 mb-2">공공 컴퓨팅 자원</h4>
+                            <p class="text-gray-600">개인용 PC가 없는 주민을 위한 가상 데스크톱 환경</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">👵</div>
+                            <h4 class="font-bold text-gray-800 mb-2">맞춤형 인터페이스</h4>
+                            <p class="text-gray-600">노인, 장애인 등 정보 취약계층을 위한 접근성 개선</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📚</div>
+                            <h4 class="font-bold text-gray-800 mb-2">디지털 역량 강화</h4>
+                            <p class="text-gray-600">기초부터 고급까지 단계별 디지털 교육</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 기대 효과 섹션 -->
+    <section id="benefits" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                    기대 효과
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    환경, 사회, 경제 전 분야에 걸친 다중적 가치 창출
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <!-- 환경적 효과 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-6 text-center">🌱</div>
+                    <h3 class="text-2xl font-bold text-eco-green mb-6 text-center">환경적 효과</h3>
+                    <div class="space-y-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-2">전자폐기물 감소</h4>
+                            <p class="text-gray-600 text-sm">연간 500-1,000대 기기 재활용으로 5-10톤 폐기물 감소</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-2">탄소 배출 감소</h4>
+                            <p class="text-gray-600 text-sm">신규 기기 생산 감소로 PC 1대당 300-400kg CO2 절약</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-2">자원 보존</h4>
+                            <p class="text-gray-600 text-sm">희소금속 및 광물 자원 절약, 수명 연장으로 자원 효율 증대</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 사회적 효과 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-6 text-center">🤝</div>
+                    <h3 class="text-2xl font-bold text-eco-blue mb-6 text-center">사회적 효과</h3>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-2">사회적 연결 강화</h4>
+                            <p class="text-gray-600 text-sm">세대 간 기술 공유, 커뮤니티 협업 증가</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-2">디지털 격차 해소</h4>
+                            <p class="text-gray-600 text-sm">균등한 컴퓨팅 자원 제공, 교육 기회 평등화</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-2">회복탄력성 증대</h4>
+                            <p class="text-gray-600 text-sm">재난 시 독립적 통신, 지역사회 복구 시간 단축</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 경제적 효과 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-6 text-center">💰</div>
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-6 text-center">경제적 효과</h3>
+                    <div class="space-y-4">
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-2">비용 절감</h4>
+                            <p class="text-gray-600 text-sm">가구당 연간 50-100만원 디지털 기기 구매 비용 절약</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-2">일자리 창출</h4>
+                            <p class="text-gray-600 text-sm">시스템 유지보수, 교육 관련 지역 일자리 창출</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-2">새로운 경제 모델</h4>
+                            <p class="text-gray-600 text-sm">공유경제, 데이터 협동조합 등 혁신적 비즈니스 모델</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 환경 효과 계산기 -->
+            <div class="mb-16">
+                <div class="bg-white p-8 lg:p-12 rounded-3xl shadow-xl border-2 border-eco-light-green">
+                    <div class="text-center mb-8">
+                        <div class="text-5xl mb-4">🧮</div>
+                        <h3 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">네이버그리드 효과 시뮬레이터</h3>
+                        <p class="text-lg text-gray-600">직접 조건을 설정해서 네이버그리드가 가져올 환경적, 경제적 효과를 체험해보세요</p>
+                    </div>
+                    
+                    <!-- 계산기 입력 섹션 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4">🏘️ 커뮤니티 설정</h4>
+                            
+                            <!-- 지역 규모 선택 -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">지역 규모</label>
+                                <select id="community-size" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-eco-green focus:border-transparent">
+                                    <option value="small">소규모 (아파트 단지 1개, 500세대)</option>
+                                    <option value="medium" selected>중간 규모 (동 단위, 2,000세대)</option>
+                                    <option value="large">대규모 (구 단위, 10,000세대)</option>
+                                </select>
+                            </div>
+                            
+                            <!-- 참여율 설정 -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">주민 참여율: <span id="participation-display">30%</span></label>
+                                <input type="range" id="participation-rate" min="10" max="80" value="30" class="w-full">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>10%</span>
+                                    <span>50%</span>
+                                    <span>80%</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 기기당 평균 개수 -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">세대당 평균 기부 기기 수: <span id="devices-display">3개</span></label>
+                                <input type="range" id="devices-per-household" min="1" max="10" value="3" class="w-full">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>1개</span>
+                                    <span>5개</span>
+                                    <span>10개</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 연간 운영 기간 -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">연간 운영 기간: <span id="operation-display">12개월</span></label>
+                                <input type="range" id="operation-months" min="6" max="12" value="12" class="w-full">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>6개월</span>
+                                    <span>9개월</span>
+                                    <span>12개월</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 실시간 결과 표시 -->
+                        <div class="space-y-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4">📊 실시간 계산 결과</h4>
+                            
+                            <!-- 기본 통계 -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-700 mb-2">기본 현황</h5>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span>총 참여 세대:</span>
+                                        <span id="total-households" class="font-medium">600세대</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>수집된 총 기기:</span>
+                                        <span id="total-devices" class="font-medium text-eco-green">1,800대</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>네이버그리드 노드:</span>
+                                        <span id="grid-nodes" class="font-medium text-eco-blue">3개</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 환경 효과 -->
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-green-800 mb-2">🌍 환경 효과</h5>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span>전자폐기물 감소:</span>
+                                        <span id="waste-saved" class="font-bold text-green-600">18톤</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>CO₂ 절약:</span>
+                                        <span id="co2-saved" class="font-bold text-green-600">6.3톤</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>에너지 절약:</span>
+                                        <span id="energy-saved" class="font-bold text-green-600">25,200kWh</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 경제 효과 -->
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">💰 경제 효과</h5>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span>주민 절약 비용:</span>
+                                        <span id="household-savings" class="font-bold text-blue-600">5억 4천만원</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>운영 비용:</span>
+                                        <span id="operation-cost" class="font-bold text-blue-600">2천만원</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>순 경제 효과:</span>
+                                        <span id="net-benefit" class="font-bold text-blue-600">5억 2천만원</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 사회 효과 -->
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-purple-800 mb-2">🤝 사회 효과</h5>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span>디지털 접근 개선:</span>
+                                        <span id="digital-access" class="font-bold text-purple-600">1,800명</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>교육 혜택 대상:</span>
+                                        <span id="education-benefit" class="font-bold text-purple-600">600명</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>재난 대응 강화:</span>
+                                        <span id="disaster-readiness" class="font-bold text-purple-600">4,500명</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 시각적 효과 그래프 -->
+                    <div class="mt-8 p-6 bg-gradient-to-r from-eco-cream to-white rounded-2xl">
+                        <h5 class="font-semibold text-gray-800 mb-4">📈 누적 효과 시각화</h5>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <!-- CO2 절약 차트 -->
+                            <div class="text-center">
+                                <div class="relative w-24 h-24 mx-auto mb-2">
+                                    <svg class="transform -rotate-90 w-24 h-24">
+                                        <circle cx="12" cy="12" r="10" stroke="#E5E7EB" stroke-width="2" fill="transparent" transform="scale(4)"/>
+                                        <circle id="co2-circle" cx="12" cy="12" r="10" stroke="#10B981" stroke-width="2" fill="transparent" 
+                                                stroke-dasharray="62.83" stroke-dashoffset="62.83" transform="scale(4)" class="transition-all duration-1000"/>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span id="co2-percentage" class="text-sm font-bold text-green-600">0%</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600">CO₂ 절약 효과</p>
+                            </div>
+                            
+                            <!-- 폐기물 감소 차트 -->
+                            <div class="text-center">
+                                <div class="relative w-24 h-24 mx-auto mb-2">
+                                    <svg class="transform -rotate-90 w-24 h-24">
+                                        <circle cx="12" cy="12" r="10" stroke="#E5E7EB" stroke-width="2" fill="transparent" transform="scale(4)"/>
+                                        <circle id="waste-circle" cx="12" cy="12" r="10" stroke="#3B82F6" stroke-width="2" fill="transparent" 
+                                                stroke-dasharray="62.83" stroke-dashoffset="62.83" transform="scale(4)" class="transition-all duration-1000"/>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span id="waste-percentage" class="text-sm font-bold text-blue-600">0%</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600">폐기물 감소</p>
+                            </div>
+                            
+                            <!-- 경제 효과 차트 -->
+                            <div class="text-center">
+                                <div class="relative w-24 h-24 mx-auto mb-2">
+                                    <svg class="transform -rotate-90 w-24 h-24">
+                                        <circle cx="12" cy="12" r="10" stroke="#E5E7EB" stroke-width="2" fill="transparent" transform="scale(4)"/>
+                                        <circle id="economic-circle" cx="12" cy="12" r="10" stroke="#F59E0B" stroke-width="2" fill="transparent" 
+                                                stroke-dasharray="62.83" stroke-dashoffset="62.83" transform="scale(4)" class="transition-all duration-1000"/>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span id="economic-percentage" class="text-sm font-bold text-yellow-600">0%</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600">경제적 절약</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 비교 섹션 -->
+                    <div class="mt-8 p-6 bg-gray-50 rounded-2xl">
+                        <h5 class="font-semibold text-gray-800 mb-4">🔍 효과 비교</h5>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h6 class="font-medium text-gray-700 mb-2">네이버그리드 효과는...</h6>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li id="tree-equivalent" class="flex items-center gap-2">
+                                        <span class="text-green-500">🌳</span>
+                                        <span>소나무 0그루를 심는 효과와 같음</span>
+                                    </li>
+                                    <li id="car-equivalent" class="flex items-center gap-2">
+                                        <span class="text-blue-500">🚗</span>
+                                        <span>자동차 0km 운행 절약과 같음</span>
+                                    </li>
+                                    <li id="household-equivalent" class="flex items-center gap-2">
+                                        <span class="text-yellow-500">🏠</span>
+                                        <span>일반 가정 0개월 전기료와 같음</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6 class="font-medium text-gray-700 mb-2">5년 후 누적 효과</h6>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span>누적 CO₂ 절약:</span>
+                                        <span id="cumulative-co2" class="font-bold text-green-600">31.5톤</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>누적 폐기물 감소:</span>
+                                        <span id="cumulative-waste" class="font-bold text-blue-600">90톤</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>누적 경제 효과:</span>
+                                        <span id="cumulative-economic" class="font-bold text-yellow-600">26억원</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 종합 효과 -->
+            <div class="bg-gradient-to-r from-eco-green to-eco-blue text-white p-8 lg:p-12 rounded-3xl">
+                <div class="text-center">
+                    <div class="text-6xl mb-6">🚀</div>
+                    <h3 class="text-2xl lg:text-3xl font-bold mb-6">종합적 가치 창출</h3>
+                    <p class="text-xl leading-relaxed max-w-4xl mx-auto opacity-90">
+                        네이버그리드는 단순한 기술 솔루션을 넘어 지역 사회의 디지털 역량 강화, 환경 보호, 
+                        그리고 공동체 연결성 증진이라는 다중적 가치를 창출하는 혁신적 순환경제 모델입니다. 
+                        버려질 위기에 처한 구형 전자기기에 새로운 생명을 불어넣음으로써, 
+                        자원의 이용가치를 높이는 진정한 의미의 친환경경제를 실현할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 효과 인포그래픽 -->
+            <div class="mt-16 bg-white p-8 rounded-3xl shadow-xl">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">네이버그리드 효과 종합 분석</h3>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="assets/effects-infographic.svg" alt="네이버그리드 효과 인포그래픽" 
+                         class="w-full h-auto">
+                </div>
+                <p class="text-gray-600 mt-6 text-center text-sm">
+                    중간 규모 커뮤니티(2,000세대) 기준 1년간 운영 시 예상되는 환경적, 사회적, 경제적 효과를 종합적으로 시각화한 자료입니다. 
+                    5년 누적 효과까지 포함하여 네이버그리드의 장기적 가치를 보여줍니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 결론 및 연락처 섹션 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                    미래를 위한 혁신
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    네이버그리드와 함께 지속가능한 디지털 미래를 만들어나가세요
+                </p>
+                <div class="bg-eco-cream p-8 rounded-2xl inline-block">
+                    <div class="text-4xl mb-4">🌟</div>
+                    <h3 class="text-xl font-bold text-eco-green mb-2">2025 순환경제 아이디어 공모전</h3>
+                    <p class="text-gray-700">구형 전자기기에 새로운 생명을, 지역사회에 새로운 연결을</p>
+                </div>
+            </div>
+
+            <!-- 팀 정보 또는 연락처 (필요시 추가) -->
+            <div class="text-center">
+                <p class="text-gray-600">
+                    더 자세한 정보가 필요하시거나 협력을 원하신다면 언제든 연락주세요.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="text-3xl font-bold mb-4">
+                    <span class="text-eco-light-blue">Neighbor</span><span class="text-eco-light-green">Grid</span>
+                </div>
+                <p class="text-gray-300 mb-8">
+                    구형 전자기기 기반 커뮤니티 컴퓨팅 생태계
+                </p>
+                <div class="border-t border-gray-600 pt-8">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 NeighborGrid Project. 2025 순환경제 아이디어 공모전 출품작
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

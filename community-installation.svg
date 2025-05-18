@@ -1,0 +1,160 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="800" height="600" fill="#f0f9ff" />
+  
+  <!-- 제목 -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1e40af">네이버그리드 커뮤니티 설치 현장</text>
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#64748b">○○아파트 단지 커뮤니티센터 (2025년 6월)</text>
+  
+  <!-- 건물 외관 -->
+  <rect x="50" y="80" width="300" height="200" fill="#e2e8f0" stroke="#64748b" stroke-width="2" />
+  <rect x="70" y="100" width="60" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+  <rect x="150" y="100" width="60" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+  <rect x="230" y="100" width="60" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+  <rect x="70" y="190" width="60" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+  <rect x="150" y="190" width="60" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+  <rect x="230" y="190" width="60" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+  
+  <!-- 건물 문 -->
+  <rect x="310" y="190" width="30" height="90" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2" />
+  <circle cx="330" cy="230" r="3" fill="#fbbf24" />
+  
+  <!-- 건물 표지판 -->
+  <rect x="80" y="60" width="180" height="30" fill="#ffffff" stroke="#64748b" stroke-width="1" />
+  <text x="170" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e40af">커뮤니티센터</text>
+  
+  <!-- 네이버그리드 실내 설치 -->
+  <rect x="420" y="100" width="320" height="180" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" />
+  <text x="580" y="125" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#92400e">네이버그리드 설치실</text>
+  
+  <!-- 모듈러 랙들 -->
+  <rect x="440" y="140" width="80" height="120" fill="#3b82f6" stroke="#1e40af" stroke-width="2" />
+  <text x="480" y="160" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">랙 #1</text>
+  <text x="480" y="175" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#dbeafe">12개 기기</text>
+  <!-- 기기 표시 -->
+  <rect x="450" y="185" width="60" height="8" fill="#22c55e" />
+  <rect x="450" y="195" width="60" height="8" fill="#22c55e" />
+  <rect x="450" y="205" width="60" height="8" fill="#ef4444" />
+  <rect x="450" y="215" width="60" height="8" fill="#22c55e" />
+  <rect x="450" y="225" width="60" height="8" fill="#22c55e" />
+  <rect x="450" y="235" width="60" height="8" fill="#f59e0b" />
+  
+  <rect x="540" y="140" width="80" height="120" fill="#3b82f6" stroke="#1e40af" stroke-width="2" />
+  <text x="580" y="160" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">랙 #2</text>
+  <text x="580" y="175" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#dbeafe">15개 기기</text>
+  <!-- 기기 표시 -->
+  <rect x="550" y="185" width="60" height="8" fill="#22c55e" />
+  <rect x="550" y="195" width="60" height="8" fill="#22c55e" />
+  <rect x="550" y="205" width="60" height="8" fill="#22c55e" />
+  <rect x="550" y="215" width="60" height="8" fill="#22c55e" />
+  <rect x="550" y="225" width="60" height="8" fill="#ef4444" />
+  <rect x="550" y="235" width="60" height="8" fill="#22c55e" />
+  
+  <rect x="640" y="140" width="80" height="120" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2" />
+  <text x="680" y="160" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="white">전원/네트워크</text>
+  <text x="680" y="175" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#ddd6fe">관리 시스템</text>
+  
+  <!-- 냉각 시스템 -->
+  <circle cx="470" cy="280" r="8" fill="#64748b" />
+  <circle cx="490" cy="280" r="8" fill="#64748b" />
+  <circle cx="510" cy="280" r="8" fill="#64748b" />
+  <text x="490" y="295" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#64748b">냉각팬</text>
+  
+  <!-- 태양광 패널 (옥상) -->
+  <rect x="80" y="50" width="200" height="20" fill="#1e40af" stroke="#1e3a8a" stroke-width="1" />
+  <path d="M90 50 L100 60 M110 50 L120 60 M130 50 L140 60 M150 50 L160 60 M170 50 L180 60 M190 50 L200 60 M210 50 L220 60 M230 50 L240 60 M250 50 L260 60" stroke="#60a5fa" stroke-width="1" />
+  <text x="180" y="45" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e40af">태양광 패널</text>
+  
+  <!-- 참여 주민들 -->
+  <!-- 주민 1 -->
+  <circle cx="150" cy="340" r="20" fill="#fecaca" stroke="#dc2626" stroke-width="2" />
+  <text x="150" y="345" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f1d1d">😊</text>
+  <rect x="130" y="360" width="40" height="60" fill="#3b82f6" stroke="#1e40af" stroke-width="1" />
+  <rect x="135" y="420" width="15" height="30" fill="#1f2937" />
+  <rect x="150" y="420" width="15" height="30" fill="#1f2937" />
+  <text x="150" y="370" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="white">김○○씨</text>
+  
+  <!-- 주민이 가져온 기기 -->
+  <rect x="100" y="380" width="25" height="15" fill="#f59e0b" stroke="#d97706" stroke-width="1" />
+  <text x="112" y="390" font-family="Arial, sans-serif" font-size="7" text-anchor="middle" fill="white">노트북</text>
+  
+  <!-- 주민 2 -->
+  <circle cx="250" cy="340" r="20" fill="#fecaca" stroke="#dc2626" stroke-width="2" />
+  <text x="250" y="345" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f1d1d">😄</text>
+  <rect x="230" y="360" width="40" height="60" fill="#10b981" stroke="#059669" stroke-width="1" />
+  <rect x="235" y="420" width="15" height="30" fill="#1f2937" />
+  <rect x="250" y="420" width="15" height="30" fill="#1f2937" />
+  <text x="250" y="370" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="white">박○○씨</text>
+  
+  <!-- 주민 2가 가져온 기기들 -->
+  <rect x="275" y="370" width="20" height="25" fill="#3b82f6" stroke="#1e40af" stroke-width="1" />
+  <text x="285" y="385" font-family="Arial, sans-serif" font-size="6" text-anchor="middle" fill="white">PC</text>
+  <rect x="300" y="380" width="15" height="20" fill="#8b5cf6" stroke="#7c3aed" stroke-width="1" />
+  <text x="307" y="390" font-family="Arial, sans-serif" font-size="6" text-anchor="middle" fill="white">폰</text>
+  
+  <!-- 기술 자원봉사자 -->
+  <circle cx="350" cy="340" r="20" fill="#fed7aa" stroke="#ea580c" stroke-width="2" />
+  <text x="350" y="345" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#9a3412">🤓</text>
+  <rect x="330" y="360" width="40" height="60" fill="#ef4444" stroke="#dc2626" stroke-width="1" />
+  <rect x="335" y="420" width="15" height="30" fill="#1f2937" />
+  <rect x="350" y="420" width="15" height="30" fill="#1f2937" />
+  <text x="350" y="370" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="white">IT봉사자</text>
+  
+  <!-- 자원봉사자 도구 -->
+  <rect x="320" y="390" width="20" height="5" fill="#64748b" />
+  <text x="330" y="400" font-family="Arial, sans-serif" font-size="6" text-anchor="middle" fill="#64748b">도구</text>
+  
+  <!-- 설치 진행 현황 -->
+  <rect x="50" y="480" width="300" height="100" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+  <text x="200" y="500" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e40af">설치 진행 현황</text>
+  
+  <text x="70" y="520" font-family="Arial, sans-serif" font-size="11" fill="#374151">✓ 하드웨어 설치 완료 (95%)</text>
+  <rect x="200" y="510" width="130" height="10" fill="#e5e7eb" stroke="#d1d5db" stroke-width="1" />
+  <rect x="200" y="510" width="124" height="10" fill="#22c55e" />
+  
+  <text x="70" y="540" font-family="Arial, sans-serif" font-size="11" fill="#374151">✓ 네트워크 구성 완료 (100%)</text>
+  <rect x="200" y="530" width="130" height="10" fill="#e5e7eb" stroke="#d1d5db" stroke-width="1" />
+  <rect x="200" y="530" width="130" height="10" fill="#22c55e" />
+  
+  <text x="70" y="560" font-family="Arial, sans-serif" font-size="11" fill="#374151">○ 소프트웨어 설정 (80%)</text>
+  <rect x="200" y="550" width="130" height="10" fill="#e5e7eb" stroke="#d1d5db" stroke-width="1" />
+  <rect x="200" y="550" width="104" height="10" fill="#f59e0b" />
+  
+  <!-- 수집된 기기 현황 -->
+  <rect x="380" y="480" width="300" height="100" fill="#f0fdf4" stroke="#dcfce7" stroke-width="1" />
+  <text x="530" y="500" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#166534">수집된 기기 현황</text>
+  
+  <text x="400" y="520" font-family="Arial, sans-serif" font-size="11" fill="#374151">데스크톱 PC: 8대</text>
+  <text x="540" y="520" font-family="Arial, sans-serif" font-size="11" fill="#374151">노트북: 12대</text>
+  
+  <text x="400" y="540" font-family="Arial, sans-serif" font-size="11" fill="#374151">태블릿: 15대</text>
+  <text x="540" y="540" font-family="Arial, sans-serif" font-size="11" fill="#374151">스마트폰: 23대</text>
+  
+  <text x="400" y="560" font-family="Arial, sans-serif" font-size="11" fill="#374151">기타: 5대</text>
+  <text x="540" y="560" font-family="Arial, sans-serif" font-size="11" fill="#166534">총 63대 기기</text>
+  
+  <!-- 와이파이 신호 표시 -->
+  <g transform="translate(580, 300)">
+    <path d="M0 20 Q-10 10 -20 20 Q-10 10 0 0 Q10 10 20 20 Q10 10 0 20" fill="none" stroke="#22c55e" stroke-width="2" />
+    <path d="M0 20 Q-5 15 -10 20 Q-5 15 0 10 Q5 15 10 20 Q5 15 0 20" fill="none" stroke="#22c55e" stroke-width="2" />
+    <circle cx="0" cy="20" r="3" fill="#22c55e" />
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#166534">WiFi</text>
+  </g>
+  
+  <!-- 연결선들 -->
+  <line x1="680" y1="260" x2="580" y2="300" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,5" />
+  <line x1="580" y1="260" x2="580" y2="300" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,5" />
+  <line x1="480" y1="260" x2="580" y2="300" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,5" />
+  
+  <!-- 커뮤니티 참여 아이콘 -->
+  <circle cx="700" cy="350" r="25" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" />
+  <text x="700" y="358" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#1e40af">🏘️</text>
+  <text x="700" y="385" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e40af">지역사회</text>
+  <text x="700" y="398" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e40af">참여</text>
+  
+  <!-- 화살표 -->
+  <path d="M650 350 L680 350 L675 345 M680 350 L675 355" stroke="#059669" stroke-width="2" fill="none" />
+  
+  <!-- 날짜 및 기타 정보 -->
+  <text x="700" y="580" font-family="Arial, sans-serif" font-size="10" text-anchor="end" fill="#64748b">설치일: 2025.06.15 | 참여 세대: 47세대 | 목표: 150세대</text>
+</svg>
