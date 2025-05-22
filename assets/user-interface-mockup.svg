@@ -40,20 +40,20 @@
   <rect x="340" y="120" width="280" height="150" fill="#f0fdf4" stroke="#22c55e" stroke-width="2" rx="8" ry="8" />
   <text x="480" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#166534">자원 사용률</text>
   <text x="360" y="175" font-family="Arial, sans-serif" font-size="12" fill="#64748b">CPU: 65%</text>
-  <rect x="400" y="165" width="120" height="10" fill="#e5e7eb" />
-  <rect x="400" y="165" width="78" height="10" fill="#22c55e" />
+  <rect x="430" y="165" width="120" height="10" fill="#e5e7eb" />
+  <rect x="430" y="165" width="78" height="10" fill="#22c55e" />
   
   <text x="360" y="195" font-family="Arial, sans-serif" font-size="12" fill="#64748b">메모리: 72%</text>
-  <rect x="400" y="185" width="120" height="10" fill="#e5e7eb" />
-  <rect x="400" y="185" width="86" height="10" fill="#f59e0b" />
+  <rect x="430" y="185" width="120" height="10" fill="#e5e7eb" />
+  <rect x="430" y="185" width="86" height="10" fill="#f59e0b" />
   
   <text x="360" y="215" font-family="Arial, sans-serif" font-size="12" fill="#64748b">저장소: 45%</text>
-  <rect x="400" y="205" width="120" height="10" fill="#e5e7eb" />
-  <rect x="400" y="205" width="54" height="10" fill="#3b82f6" />
+  <rect x="430" y="205" width="120" height="10" fill="#e5e7eb" />
+  <rect x="430" y="205" width="54" height="10" fill="#3b82f6" />
   
   <text x="360" y="235" font-family="Arial, sans-serif" font-size="12" fill="#64748b">네트워크: 28%</text>
-  <rect x="400" y="225" width="120" height="10" fill="#e5e7eb" />
-  <rect x="400" y="225" width="34" height="10" fill="#10b981" />
+  <rect x="430" y="225" width="120" height="10" fill="#e5e7eb" />
+  <rect x="430" y="225" width="34" height="10" fill="#10b981" />
   
   <text x="360" y="255" font-family="Arial, sans-serif" font-size="12" fill="#64748b">총 처리량: 847 작업/시간</text>
   
@@ -186,7 +186,7 @@
   <rect x="640" y="590" width="520" height="150" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
   
   <!-- 간단한 성능 그래프 -->
-  <path d="M660 720 L680 700 L700 680 L720 690 L740 670 L760 650 L780 640 L800 630 L820 620 L840 610 L860 600 L880 590 L900 580 L920 570 L940 560 L960 550 L980 540 L1000 530 L1020 520 L1040 510 L1060 500 L1080 490 L1100 480 L1120 470" stroke="#3b82f6" stroke-width="2" fill="none" />
+  <path d="M660 720 L680 700 L700 680 L720 690 L740 670 L760 650 L780 640 L800 630 L820 620 L840 610 L860 600 L880 590 L900 590 L920 590 L940 590 L960 590 L980 590 L1000 590 L1020 590 L1040 590 L1060 590 L1080 590 L1100 590 L1120 590" stroke="#3b82f6" stroke-width="2" fill="none" />
   <text x="660" y="735" font-family="Arial, sans-serif" font-size="9" fill="#64748b">00:00</text>
   <text x="780" y="735" font-family="Arial, sans-serif" font-size="9" fill="#64748b">12:00</text>
   <text x="1100" y="735" font-family="Arial, sans-serif" font-size="9" fill="#64748b">24:00</text>
